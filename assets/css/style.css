@@ -47,6 +47,31 @@ a:hover {
     color: var(--primary-dark);
 }
 
+a:focus,
+button:focus,
+.btn:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 8px 16px;
+    z-index: 1001;
+    transition: top 0.3s;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--accent-color);
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.3;
