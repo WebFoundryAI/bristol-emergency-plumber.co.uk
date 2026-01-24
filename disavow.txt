@@ -1,16 +1,38 @@
 # Google Disavow File for bristolemergencyplumber.co.uk
 # Generated: 2026-01-24
+# Updated: 2026-01-24 (merged Ahrefs audit findings)
 #
 # These are spam/toxic backlinks from link farms, PBNs, and automated scrapers.
 # Upload this file to Google Search Console: https://search.google.com/search-console/disavow-links
 #
 # Categories of spam identified:
 # - PBN (Private Blog Network) link farms
+# - Link selling/SEO services
 # - Fake SEO/domain services
 # - Expired domain scrapers
 # - Fake directories
 # - Adult/gambling/piracy sites
+# - Auto-generated gibberish domains
 # - Random spam sites
+
+# Link Selling Services (from Ahrefs audit)
+domain:exlinko.net
+domain:seo-backlink.agency
+domain:primeseo.xyz
+domain:grow-your.website
+domain:linkbooster.agency
+
+# Auto-generated Gibberish Domain Spam (from Ahrefs audit)
+domain:bmwyng.com
+domain:obmain.com
+domain:hzdlpq.com
+domain:dsnylu.com
+domain:nettools.guru
+domain:kgzxkf.com
+domain:qhtycw.com
+domain:sitescooponline.com
+domain:metamagic.top
+domain:runningwebsites.net
 
 # PBN and Link Farm Domains
 domain:great-choice-for-pbn-domains.co.uk
