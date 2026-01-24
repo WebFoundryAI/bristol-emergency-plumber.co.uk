@@ -86,12 +86,8 @@ for file in "$ROOT_DIR"/services/*.html; do
     fi
 done
 
-# Legal/policy pages - lower priority
-for page in privacy-policy.html terms.html cookie-policy.html accessibility.html; do
-    if [[ -f "$ROOT_DIR/$page" ]]; then
-        add_url "/$page" "0.3" "yearly"
-    fi
-done
+# Note: Legal/policy pages (privacy-policy, terms, cookie-policy, accessibility)
+# are excluded from sitemap as they have noindex meta tags
 
 # Close sitemap
 echo "</urlset>" >> "$SITEMAP_FILE"
