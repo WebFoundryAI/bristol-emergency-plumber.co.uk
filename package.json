@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "Bristol Emergency Plumber website",
   "scripts": {
-    "build": "./scripts/generate-sitemap.sh"
+    "build": "./scripts/generate-sitemap.sh",
+    "check:postcodes": "node scripts/check-postcodes.mjs",
+    "postcodes:candidates": "node scripts/postcodes-candidates.mjs",
+    "postcodes:inspect": "node scripts/gsc-url-inspection.mjs",
+    "postcodes:manifest": "node scripts/postcodes-removal-manifest.mjs",
+    "postcodes:remove": "node scripts/remove-postcode-pages.mjs",
+    "postcodes:redirects": "node scripts/update-postcode-redirects.mjs"
+  },
+  "dependencies": {
+    "google-auth-library": "^9.15.0"
   }
 }
