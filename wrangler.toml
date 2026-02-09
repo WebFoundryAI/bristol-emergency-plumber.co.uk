@@ -1,7 +1,0 @@
-name = "bristol-emergency-plumber"
-compatibility_date = "2024-10-01"
-pages_build_output_dir = "."
-
-[[d1_databases]]
-binding = "DB"
-database_name = "bristol-emergency-plumber"
