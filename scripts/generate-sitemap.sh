@@ -48,6 +48,9 @@ add_url "/" "1.0" "weekly"
 for file in "$ROOT_DIR"/*-bristol.html; do
     if [[ -f "$file" ]]; then
         filename=$(basename "$file")
+        if [[ "$filename" =~ ^emergency-plumber-[A-Za-z]{1,2}[0-9]{1,2}[A-Za-z]?\.html$ ]]; then
+            continue
+        fi
         add_url "/$filename" "0.9" "monthly"
     fi
 done
