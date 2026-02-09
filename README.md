@@ -74,6 +74,30 @@ For live reload during development:
 npx serve .
 ```
 
+## Lead capture setup
+
+This site uses Cloudflare Pages Functions + D1 to store lead submissions from the hero CTA form.
+
+### Required bindings (Cloudflare Pages)
+
+- **D1 database binding**: `DB`
+- **Environment variables**:
+  - `GETADDRESS_API_KEY` (getAddress.io API key)
+  - `TURNSTILE_SITE_KEY` (Cloudflare Turnstile site key)
+  - `TURNSTILE_SECRET_KEY` (Cloudflare Turnstile secret key)
+- **Wrangler Pages output directory**: `pages_build_output_dir = "."` (already set in `wrangler.toml`).
+
+### D1 migrations
+
+Run the migration in `migrations/0001_create_leads.sql` when provisioning the D1 database.
+
+### Pages Functions endpoints
+
+- `GET /api/address/suggest?postcode=BS1+1AA`
+- `GET /api/address/get?id=...`
+- `POST /api/leads`
+- `GET /api/lead-config` (exposes `TURNSTILE_SITE_KEY` to the client)
+
 ## Content Guidelines
 
 - UK English spelling
