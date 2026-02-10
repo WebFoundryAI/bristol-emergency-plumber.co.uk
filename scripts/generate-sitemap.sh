@@ -26,7 +26,8 @@ add_url() {
     fi
 
     if [[ -f "$file" ]]; then
-        local lastmod=$(date -r "$file" +%Y-%m-%d 2>/dev/null || echo "$TODAY")
+        # Use stat for Linux compatibility (date -r is macOS-only for files)
+        local lastmod=$(stat -c %Y "$file" 2>/dev/null | xargs -I{} date -d @{} +%Y-%m-%d 2>/dev/null || date -r "$file" +%Y-%m-%d 2>/dev/null || echo "$TODAY")
     else
         local lastmod="$TODAY"
     fi
@@ -86,12 +87,8 @@ for file in "$ROOT_DIR"/services/*.html; do
     fi
 done
 
-# Legal/policy pages - lower priority
-for page in privacy-policy.html terms.html cookie-policy.html accessibility.html; do
-    if [[ -f "$ROOT_DIR/$page" ]]; then
-        add_url "/$page" "0.3" "yearly"
-    fi
-done
+# Note: Legal/policy pages (privacy-policy, terms, cookie-policy, accessibility)
+# are excluded from sitemap as they have noindex meta tags
 
 # Close sitemap
 echo "</urlset>" >> "$SITEMAP_FILE"

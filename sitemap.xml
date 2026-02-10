@@ -84,28 +84,4 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    <url>
-        <loc>https://bristolemergencyplumber.co.uk/privacy-policy.html</loc>
-        <lastmod>2026-01-14</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://bristolemergencyplumber.co.uk/terms.html</loc>
-        <lastmod>2026-01-14</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://bristolemergencyplumber.co.uk/cookie-policy.html</loc>
-        <lastmod>2026-01-14</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://bristolemergencyplumber.co.uk/accessibility.html</loc>
-        <lastmod>2026-01-14</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
 </urlset>
