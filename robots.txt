@@ -9,4 +9,3 @@ Disallow: /private/
 
 # Allow all crawlers access to assets
 Allow: /assets/
-Allow: /images/
