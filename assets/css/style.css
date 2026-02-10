@@ -202,7 +202,8 @@ p {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, rgba(26, 95, 122, 0.85) 0%, rgba(19, 75, 97, 0.9) 100%),
+                url('/assets/images/hero-emergency-plumber-bristol.webp') center/cover no-repeat;
     color: var(--white);
     padding: 80px 0;
     text-align: center;
@@ -616,6 +617,11 @@ p {
     margin: 0 auto;
 }
 
+.page-hero--locations {
+    background: linear-gradient(135deg, rgba(26, 95, 122, 0.85) 0%, rgba(19, 75, 97, 0.9) 100%),
+                url('/assets/images/hero-locations-bristol.webp') center/cover no-repeat;
+}
+
 /* Content Sections */
 .content-section {
     padding: 60px 0;
@@ -747,6 +753,16 @@ p {
     border-radius: 10px;
     box-shadow: var(--shadow);
     border-left: 4px solid var(--primary-color);
+    overflow: hidden;
+}
+
+.region-card__image {
+    width: calc(100% + 60px);
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    margin: -30px -30px 20px -30px;
+    display: block;
 }
 
 .region-card h3 {
