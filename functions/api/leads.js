@@ -98,8 +98,8 @@ async function handlePost(request, env) {
 
   try {
     await env.DB.prepare(
-      `INSERT INTO leads (id, name, email, phone, service, message, source_page, ip_hash, user_agent)
-       VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9)`
+      `INSERT INTO leads (id, name, email, phone, service, message, postcode, address, source_page, ip_hash, user_agent)
+       VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)`
     ).bind(
       id,
       payload.name,
@@ -107,6 +107,8 @@ async function handlePost(request, env) {
       payload.phone,
       payload.service || null,
       payload.message || null,
+      payload.postcode || null,
+      payload.address || null,
       payload.source_page || null,
       ipHash,
       request.headers.get('user-agent') || null

@@ -173,6 +173,17 @@
                                 <input type="tel" id="hero-phone" name="phone" required placeholder="07700 900000">
                             </div>
                             <div class="form-group">
+                                <label for="hero-postcode">Postcode</label>
+                                <div class="postcode-lookup-row">
+                                    <input type="text" id="hero-postcode" placeholder="e.g. BS1 4QA" autocomplete="postal-code">
+                                    <button type="button" id="hero-find-address-btn" class="btn btn-secondary btn-find-address">Find Address</button>
+                                </div>
+                                <select id="hero-address-dropdown" class="address-dropdown" style="display: none;" aria-label="Select your address"></select>
+                                <div id="hero-selected-address" class="selected-address" style="display: none;" aria-live="polite"></div>
+                                <input type="hidden" id="hero-hidden-postcode" name="postcode">
+                                <input type="hidden" id="hero-hidden-address" name="address">
+                            </div>
+                            <div class="form-group">
                                 <label for="hero-service">Service Required</label>
                                 <select id="hero-service" name="service">
                                     <option value="">Please select...</option>
@@ -385,6 +396,8 @@
             name: formData.get('name'),
             email: formData.get('email'),
             phone: formData.get('phone'),
+            postcode: document.getElementById('hero-hidden-postcode').value || document.getElementById('hero-postcode').value.trim() || null,
+            address: document.getElementById('hero-hidden-address').value || null,
             service: formData.get('service'),
             message: formData.get('message'),
             website: formData.get('website'),
@@ -422,6 +435,17 @@
             submitButton.textContent = originalButtonText;
             submitButton.disabled = false;
         }
+    });
+    </script>
+    <script src="/assets/js/address-lookup.js"></script>
+    <script>
+    initAddressLookup({
+        postcodeInputId: 'hero-postcode',
+        findButtonId: 'hero-find-address-btn',
+        addressDropdownId: 'hero-address-dropdown',
+        selectedAddressId: 'hero-selected-address',
+        hiddenPostcodeId: 'hero-hidden-postcode',
+        hiddenAddressId: 'hero-hidden-address'
     });
     </script>
 </body>

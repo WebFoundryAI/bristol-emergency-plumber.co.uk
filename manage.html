@@ -254,6 +254,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>Address</th>
                     <th>Service</th>
                     <th>Message</th>
                     <th>Status</th>
@@ -324,6 +325,7 @@
                 <td>${escapeHtml(lead.name)}</td>
                 <td><a href="mailto:${escapeHtml(lead.email)}">${escapeHtml(lead.email)}</a></td>
                 <td><a href="tel:${escapeHtml(lead.phone)}">${escapeHtml(lead.phone)}</a></td>
+                <td class="message-cell" title="${escapeHtml(lead.address || '')}">${lead.postcode ? escapeHtml(lead.postcode) : '-'}${lead.address ? '<br><small>' + escapeHtml(lead.address) + '</small>' : ''}</td>
                 <td>${escapeHtml(service)}</td>
                 <td class="message-cell" title="${escapeHtml(message)}">${escapeHtml(message)}</td>
                 <td>

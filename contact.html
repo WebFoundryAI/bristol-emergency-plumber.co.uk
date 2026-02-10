@@ -107,7 +107,14 @@
 
     <div class="form-group">
         <label for="postcode">Postcode</label>
-        <input type="text" id="postcode" name="postcode">
+        <div class="postcode-lookup-row">
+            <input type="text" id="postcode" placeholder="e.g. BS1 4QA" autocomplete="postal-code">
+            <button type="button" id="find-address-btn" class="btn btn-secondary btn-find-address">Find Address</button>
+        </div>
+        <select id="address-dropdown" class="address-dropdown" style="display: none;" aria-label="Select your address"></select>
+        <div id="selected-address" class="selected-address" style="display: none;" aria-live="polite"></div>
+        <input type="hidden" id="hidden-postcode" name="postcode">
+        <input type="hidden" id="hidden-address" name="address">
     </div>
 
     <div class="form-group">
@@ -152,6 +159,8 @@ form.addEventListener('submit', async function(e) {
         name: formData.get('name'),
         email: formData.get('email'),
         phone: formData.get('phone'),
+        postcode: document.getElementById('hidden-postcode').value || document.getElementById('postcode').value.trim() || null,
+        address: document.getElementById('hidden-address').value || null,
         service: formData.get('service'),
         message: formData.get('message'),
         website: formData.get('website'),
@@ -188,6 +197,17 @@ form.addEventListener('submit', async function(e) {
         submitButton.textContent = originalButtonText;
         submitButton.disabled = false;
     }
+});
+</script>
+<script src="/assets/js/address-lookup.js"></script>
+<script>
+initAddressLookup({
+    postcodeInputId: 'postcode',
+    findButtonId: 'find-address-btn',
+    addressDropdownId: 'address-dropdown',
+    selectedAddressId: 'selected-address',
+    hiddenPostcodeId: 'hidden-postcode',
+    hiddenAddressId: 'hidden-address'
 });
 </script>
 

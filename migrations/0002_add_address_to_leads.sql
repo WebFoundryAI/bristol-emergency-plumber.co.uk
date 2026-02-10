@@ -1,0 +1,2 @@
+ALTER TABLE leads ADD COLUMN postcode TEXT;
+ALTER TABLE leads ADD COLUMN address TEXT;
