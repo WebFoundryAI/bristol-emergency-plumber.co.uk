@@ -5,5 +5,4 @@ pages_build_output_dir = "."
 [[d1_databases]]
 binding = "DB"
 database_name = "bristol-emergency-plumber"
-# TODO: Run `wrangler d1 create bristol-emergency-plumber` and paste the database_id here
-# database_id = "your-database-id-here"
+database_id = "2e53d29a-4f65-4b1a-82e6-abfe4a00df88"

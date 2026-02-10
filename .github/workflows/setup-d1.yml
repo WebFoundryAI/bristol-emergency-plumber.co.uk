@@ -6,6 +6,9 @@ on:
     paths:
       - '.github/workflows/setup-d1.yml'
 
+permissions:
+  contents: write
+
 jobs:
   setup-d1:
     runs-on: ubuntu-latest
