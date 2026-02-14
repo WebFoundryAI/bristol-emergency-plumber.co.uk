@@ -26,8 +26,8 @@ add_url() {
     fi
 
     if [[ -f "$file" ]]; then
-        # Use stat for Linux compatibility (date -r is macOS-only for files)
-        local lastmod=$(stat -c %Y "$file" 2>/dev/null | xargs -I{} date -d @{} +%Y-%m-%d 2>/dev/null || date -r "$file" +%Y-%m-%d 2>/dev/null || echo "$TODAY")
+        local lastmod=$(git -C "$ROOT_DIR" log -1 --format="%cd" --date=short -- "$file" 2>/dev/null)
+        lastmod="${lastmod:-$TODAY}"
     else
         local lastmod="$TODAY"
     fi
